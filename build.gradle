@@ -36,7 +36,7 @@ uploadArchives {
             repository(url: "file://${repos.absolutePath}")
             pom.version = '1.0.0'             // version
             pom.groupId = 'org.sesela'    // グループ名
-            pom.artifactId = 'common-validator' // ライブラリ名
+            pom.artifactId = 'commons-validator' // ライブラリ名
             pom.project {
                 inceptionYear '2017'
                 packaging 'jar'

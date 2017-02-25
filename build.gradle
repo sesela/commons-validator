@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+version = '0.1'
+jar {
+    baseName = 'sesela-common-validator'
+    manifest {
+        attributes 'Implementation-Title': 'sesela-common-validator',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('commons-validator:commons-validator:1.5.1')
+    compile('commons-lang:commons-lang:2.6')
+    compile('javax.validation:validation-api:1.1.0.Final')
+    compile('javax.mail:mail:1.4.7')
+    
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}

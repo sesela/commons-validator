@@ -1,14 +1,21 @@
 apply plugin: 'java'
+apply plugin: 'maven'
 apply plugin: 'eclipse'
 
 sourceCompatibility = 1.8
-version = '0.1'
+
+def version = '1.0.0'
+def groupId = 'org.sesela'
+def artifactId = 'commons-validator'
+
+
 jar {
-    baseName = 'sesela-common-validator'
+    baseName = "${artifactId}"
     manifest {
-        attributes 'Implementation-Title': 'sesela-common-validator',
-                   'Implementation-Version': version
+        attributes 'Implementation-Title': "${artifactId}",
+                   'Implementation-Version': "${version}"
     }
+    from sourceSets.main.allSource
 }
 
 repositories {
@@ -28,10 +35,25 @@ test {
     systemProperties 'property': 'value'
 }
 
+def repos = new File(rootDir, "repos")
 uploadArchives {
     repositories {
-       flatDir {
-           dirs 'repos'
-       }
+        mavenDeployer {
+            repository(url: "file://${repos.absolutePath}")
+            pom.version = "${version}"
+            pom.groupId = "${groupId}"
+            pom.artifactId = "${artifactId}"
+            pom.project {
+                inceptionYear '2017'
+                packaging 'jar'
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'repo'
+                    }
+                }
+            }
+        }
     }
 }

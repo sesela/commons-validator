@@ -3,13 +3,19 @@ apply plugin: 'maven'
 apply plugin: 'eclipse'
 
 sourceCompatibility = 1.8
-version = '0.1'
+
+def version = '1.0.0'
+def groupId = 'org.sesela'
+def artifactId = 'commons-validator'
+
+
 jar {
-    baseName = 'sesela-common-validator'
+    baseName = "${artifactId}"
     manifest {
-        attributes 'Implementation-Title': 'sesela-common-validator',
-                   'Implementation-Version': version
+        attributes 'Implementation-Title': "${artifactId}",
+                   'Implementation-Version': "${version}"
     }
+    from sourceSets.main.allSource
 }
 
 repositories {
@@ -34,9 +40,9 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository(url: "file://${repos.absolutePath}")
-            pom.version = '1.0.0'             // version
-            pom.groupId = 'org.sesela'    // グループ名
-            pom.artifactId = 'commons-validator' // ライブラリ名
+            pom.version = "${version}"
+            pom.groupId = "${groupId}"
+            pom.artifactId = "${artifactId}"
             pom.project {
                 inceptionYear '2017'
                 packaging 'jar'

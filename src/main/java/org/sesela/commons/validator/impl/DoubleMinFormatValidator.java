@@ -16,7 +16,8 @@ import org.sesela.commons.validator.DoubleMinFormat;
 public class DoubleMinFormatValidator implements
 		ConstraintValidator<DoubleMinFormat, String> {
 
-	double min;
+	/** 最小値 */
+	private double min;
 	
 	@Override
 	public boolean isValid(final String obj, final ConstraintValidatorContext arg1) {

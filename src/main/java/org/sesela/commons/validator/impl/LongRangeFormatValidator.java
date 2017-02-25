@@ -16,8 +16,11 @@ import org.sesela.commons.validator.LongRangeFormat;
 public class LongRangeFormatValidator implements
 		ConstraintValidator<LongRangeFormat, String> {
 
-	long min;
-	long max;
+	/** 最小値 */
+	private long min;
+
+	/** 最大値 */
+	private long max;
 	
 	@Override
 	public boolean isValid(final String obj, final ConstraintValidatorContext arg1) {

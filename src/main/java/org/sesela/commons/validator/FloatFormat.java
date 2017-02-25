@@ -27,18 +27,19 @@ public @interface FloatFormat {
 
 	/**
 	 * エラーメッセージコード。デフォルト"{org.sesela.commons.validation.FloatFormat.message}"です。
-	 * 
+	 * @return エラーメッセージコード
 	 */
 	String message() default "{org.sesela.commons.validation.FloatFormat.message}";
 	
 	/**
 	 * 制約に対するバリデーションが属するグループ。
-	 * 
+	 * @return グループ
 	 */
 	Class<?>[] groups() default { };
 
 	/**
 	 * ペイロード
+	 * @return ペイロード
 	 */
 	Class<? extends Payload>[] payload() default { };
 

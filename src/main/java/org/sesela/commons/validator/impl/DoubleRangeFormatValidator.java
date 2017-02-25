@@ -16,8 +16,11 @@ import org.sesela.commons.validator.DoubleRangeFormat;
 public class DoubleRangeFormatValidator implements
 		ConstraintValidator<DoubleRangeFormat, String> {
 
-	double min;
-	double max;
+	/** 最小値 */
+	private double min;
+
+	/** 最大値 */
+	private double max;
 	
 	@Override
 	public boolean isValid(final String obj, final ConstraintValidatorContext arg1) {

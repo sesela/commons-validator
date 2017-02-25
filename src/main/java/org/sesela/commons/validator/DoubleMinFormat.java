@@ -27,24 +27,25 @@ public @interface DoubleMinFormat {
 
 	/**
 	 * エラーメッセージコード。デフォルト"{org.sesela.commons.validation.DoubleMinFormat.message}"です。
-	 * 
+	 * @return エラーメッセージコード
 	 */
 	String message() default "{org.sesela.commons.validation.DoubleMinFormat.message}";
 
 	/**
 	 * 最小値。
-	 * 
+	 * @return 最小値
 	 */
 	double min();
 	
 	/**
 	 * 制約に対するバリデーションが属するグループ。
-	 * 
+	 * @return グループ
 	 */
 	Class<?>[] groups() default { };
 
 	/**
 	 * ペイロード
+	 * @return ペイロード
 	 */
 	Class<? extends Payload>[] payload() default { };
 

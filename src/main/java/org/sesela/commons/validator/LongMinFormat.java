@@ -27,24 +27,25 @@ public @interface LongMinFormat {
 
 	/**
 	 * エラーメッセージコード。デフォルト"{org.sesela.commons.validation.LongMinFormat.message}"です。
-	 * 
+	 * @return エラーメッセージコード
 	 */
 	String message() default "{org.sesela.commons.validation.LongMinFormat.message}";
 
 	/**
 	 * 最小値。
-	 * 
+	 * @return 最小値
 	 */
 	long min();
 	
 	/**
 	 * 制約に対するバリデーションが属するグループ。
-	 * 
+	 * @return グループ
 	 */
 	Class<?>[] groups() default { };
 
 	/**
 	 * ペイロード
+	 * @return ペイロード
 	 */
 	Class<? extends Payload>[] payload() default { };
 

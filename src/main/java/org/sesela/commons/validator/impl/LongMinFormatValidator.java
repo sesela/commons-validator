@@ -16,7 +16,8 @@ import org.sesela.commons.validator.LongMinFormat;
 public class LongMinFormatValidator implements
 		ConstraintValidator<LongMinFormat, String> {
 
-	long min;
+	/** 最小値 */
+	private long min;
 	
 	@Override
 	public boolean isValid(final String obj, final ConstraintValidatorContext arg1) {

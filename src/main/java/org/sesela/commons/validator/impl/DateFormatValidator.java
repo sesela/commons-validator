@@ -16,7 +16,7 @@ import org.sesela.commons.validator.DateFormat;
 public class DateFormatValidator implements
 		ConstraintValidator<DateFormat, String> {
 
-	/** 日時パターント */
+	/** 日時パターン */
 	private String pattern;
 
 	/** 厳密フラグ */

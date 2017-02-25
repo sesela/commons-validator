@@ -16,7 +16,8 @@ import org.sesela.commons.validator.DoubleMaxFormat;
 public class DoubleMaxFormatValidator implements
 		ConstraintValidator<DoubleMaxFormat, String> {
 
-	double max;
+	/** 最大値 */
+	private double max;
 	
 	@Override
 	public boolean isValid(final String obj, final ConstraintValidatorContext arg1) {

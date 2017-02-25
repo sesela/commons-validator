@@ -27,24 +27,25 @@ public @interface DoubleMaxFormat {
 
 	/**
 	 * エラーメッセージコード。デフォルト"{org.sesela.commons.validation.DoubleMaxFormat.message}"です。
-	 * 
+	 * @return エラーメッセージコード
 	 */
 	String message() default "{org.sesela.commons.validation.DoubleMaxFormat.message}";
 
 	/**
 	 * 最大値。
-	 * 
+	 * @return 最大値
 	 */
 	double max();
 	
 	/**
 	 * 制約に対するバリデーションが属するグループ。
-	 * 
+	 * @return グループ
 	 */
 	Class<?>[] groups() default { };
 
 	/**
 	 * ペイロード
+	 * @return ペイロード
 	 */
 	Class<? extends Payload>[] payload() default { };
 

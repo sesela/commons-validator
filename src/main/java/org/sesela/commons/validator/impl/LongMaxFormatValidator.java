@@ -16,7 +16,8 @@ import org.sesela.commons.validator.LongMaxFormat;
 public class LongMaxFormatValidator implements
 		ConstraintValidator<LongMaxFormat, String> {
 
-	long max;
+	/** 最大値 */
+	private long max;
 	
 	@Override
 	public boolean isValid(final String obj, final ConstraintValidatorContext arg1) {
